@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing System</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <% if (locals.fileLink !=null){ %>
+        <div> File  is uploaded <a href="<%= locals.fileLink %>"><%= locals.fileLink %> </a>
+        </div> 
+        <% } %>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file" required/>
+        <label for="password">pass:</label>
+        <input type="password" id="password" name="password" />
+        <button type="submit">Share</button>
+    </form>
+</body>
+</html>

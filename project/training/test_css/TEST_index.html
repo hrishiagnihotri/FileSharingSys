@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TESTING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="TEST_index.css" />
+</head>
+
+<body>
+  <header>
+    <div class="about_us" id="about">
+      <a href="#" >About Us</a>
+    </div>
+   
+    <div class="card" id="card">
+      <ul class="name">
+        <h3>Project by</h5>
+          <li>Aditya M Patil (2VD21CS001)</li>
+          <li>Amarnath M Patil (2VD21CS006)</li>
+          <li>Hrishikesh M Agnihotri (2VD21CS018)</li>
+          <li>Nikhil Suresh Yallaraddi (2VD21CS031)</li>
+      </ul>
+    </div>
+    <div class="main_title">File Sharing System</div>
+    <div class="subtext">
+      Seamlessly Transfer and Access Files on Any Device
+    </div>
+  </header>
+  <main>
+    <div id="test">Filename.txt</div>
+    <section class="form">
+      <form action="/upload" method="post" class="form1" enctype="multipart/form-data">
+        <div class="ele1">
+          <label for="file">Upload File:</label>
+          <input type="file" id="file" name="file" required />
+        </div>
+        <div class="ele2">
+          <label for="password" class="pass">Password :</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <button type="submit" class="submit_button">Share</button>
+      </form>
+    </section>
+  </main>
+  <footer>Password is not Mandatory. Network speed depends on the network infrastructure and the bandwidth allocated.
+    <div class="year">2024</div>
+  </footer>
+</body>
+<script>
+  
+  document.getElementById('about').addEventListener("click", showcard);
+  document.getElementById('about').addEventListener("mouseenter", showcard);
+  document.getElementById('about').addEventListener("mouseleave", hidecard);
+  function showcard() {
+    document.getElementById('card').style.visibility='visible';
+  }
+  function hidecard(event) {
+    setTimeout(()=>{document.getElementById('card').style.visibility='hidden';},100)
+    
+  }
+</script>
+</html>

@@ -1,0 +1,27 @@
+body{
+    display: grid;
+    grid-template-areas: "head head head" 
+                         "cont cont cont"
+                         "foot foot foot";
+}
+
+header{
+    grid-area: head;
+    display: grid;
+    justify-items: center;
+}
+
+.about_us{
+    justify-self: end;
+    border: 1px solid black;
+    /* margin:5px 2px 1px 3px ; */
+    margin-right: 1vw;
+}
+
+main{
+    grid-area: cont;
+}
+
+footer{
+    grid-area: foot;
+}

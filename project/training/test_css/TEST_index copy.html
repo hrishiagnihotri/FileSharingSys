@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="myAnchor">Click me</a>
+    <p>Click anywhere else or move the mouse to cancel the effect.</p>
+
+    <script>
+        let highlightTimeout;
+
+        function addHighlight() {
+            document.getElementById('myAnchor').classList.add('highlight');
+        }
+
+        function removeHighlight() {
+            document.getElementById('myAnchor').classList.remove('highlight');
+        }
+
+        function myFunction(event) {
+            event.preventDefault();
+            addHighlight();
+
+            // Clear any existing timeout to ensure it resets
+            clearTimeout(highlightTimeout);
+
+            // Set a timeout to automatically remove the highlight after 1 second
+            highlightTimeout = setTimeout(removeHighlight, 1000);
+
+            // Add event listeners to remove highlight on mouse move or click
+            document.addEventListener('mousemove', removeHighlightOnce);
+            document.addEventListener('click', removeHighlightOnce);
+        }
+
+        function removeHighlightOnce() {
+            removeHighlight();
+            clearTimeout(highlightTimeout);
+
+            // Remove the event listeners after executing once
+            document.removeEventListener('mousemove', removeHighlightOnce);
+            document.removeEventListener('click', removeHighlightOnce);
+        }
+
+        document.getElementById('myAnchor').addEventListener('click', myFunction);
+    </script>
+</body>
+</html>
